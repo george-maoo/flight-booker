@@ -2,7 +2,7 @@
 <div>
   <%= f.label :departure_code, "Departure airport:"  %>
   <%= f.select :departure_code, options_from_collection_for_select(
-    @airports,
+    airports,
     :id,
     :airport_code,
     params[:departure_code]
@@ -11,7 +11,7 @@
 <div>
   <%= f.label :arrival_code, "Arrival airport:"  %>
   <%= f.select :arrival_code, options_from_collection_for_select(
-    @airports,
+    airports,
     :id,
     :airport_code,
     params[:arrival_code]
@@ -20,7 +20,7 @@
 <div>
   <%= f.label :date, "Departure date:"  %>
   <%= f.select :date, options_from_collection_for_select(
-    @flights,
+    flights,
     :date,
     :date,
     params[:date]
