@@ -1,0 +1,36 @@
+<%= form_with url: "/flights", method: :get do |f| %>
+<div>
+  <%= f.label :departure_code, "Departure airport:"  %>
+  <%= f.select :departure_code, options_from_collection_for_select(
+    @airports,
+    :id,
+    :airport_code,
+    params[:departure_code]
+  ), prompt: "" %>
+</div>
+<div>
+  <%= f.label :arrival_code, "Arrival airport:"  %>
+  <%= f.select :arrival_code, options_from_collection_for_select(
+    @airports,
+    :id,
+    :airport_code,
+    params[:arrival_code]
+  ), prompt: "" %>
+</div>
+<div>
+  <%= f.label :date, "Departure date:"  %>
+  <%= f.select :date, options_from_collection_for_select(
+    @flights,
+    :date,
+    :date,
+    params[:date]
+  ), prompt: "" %>
+</div>
+<div>
+  <%= f.label :num_tickets, "Number of tickets:" %>
+  <%= f.select :num_tickets, [1, 2, 3, 4], :selected => params[:num_tickets] %>
+</div>
+<div>
+  <%= f.submit "Search for flights", name: nil %>
+</div>
+<% end %>
