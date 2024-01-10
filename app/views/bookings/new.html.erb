@@ -6,3 +6,23 @@
   <li>Date: <%= @flight.date %></li>
   <li>Duration: <%= @flight.duration %> hours</li>
 </ul>
+
+<%= form_with model: @booking do |f| %>
+  <%= f.hidden_field :flight_id, value: @booking.flight_id %>
+
+  <div>Passengers:</div>
+  <br>
+  <%= f.fields_for :passengers do |nested_form| %>
+    <div>
+      name:
+      <%= nested_form.text_field :name %>
+    </div>
+    <div>
+      email:
+      <%= nested_form.text_field :email %>
+    </div>
+    <br>
+  <% end %>
+
+  <%= f.submit "Submit form" %>
+<% end %>
