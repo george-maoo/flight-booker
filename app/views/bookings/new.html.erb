@@ -1,1 +1,8 @@
-bookings new
+<h1>New booking:</h1>
+<div>Chosen flight:</div>
+<ul>
+  <li>From: <%= @flight.departure_airport %></li>
+  <li>To: <%= @flight.arrival_airport %></li>
+  <li>Date: <%= @flight.date %></li>
+  <li>Duration: <%= @flight.duration %> hours</li>
+</ul>

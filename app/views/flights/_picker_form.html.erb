@@ -1,14 +1,17 @@
 <!--  flight picker form-->
 <%= form_with url: "/bookings/new", method: :get do |f| %>
-  <%= f.hidden_field :num_tickets, value: params[:num_tickets] %>
+  <div>
+    <%= f.label :num_tickets, "number of tickets:" %>
+    <%= f.select :num_tickets, [1, 2, 3, 4]  %>
+  </div>
   <% searched_flights.each do |flight| %>
     <div>
       <%= f.radio_button :flight_id, flight.id %>
       <%= f.label :flight_id,
-                  "To: #{flight.arrival_airport},
-                     From: #{flight.departure_airport},
-                     Date: #{flight.date},
-                     Duration: #{flight.duration}"
+                  "From: #{flight.departure_airport},
+                   To: #{flight.arrival_airport},
+                   Date: #{flight.date},
+                   Duration: #{flight.duration} hours"
       %>
     </div>
   <% end %>

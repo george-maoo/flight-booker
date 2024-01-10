@@ -21,7 +21,7 @@ flight_4 = Flight.create(departure_airport: airport_6 , arrival_airport: airport
 flight_5 = Flight.create(departure_airport: airport_4 , arrival_airport: airport_7, date: "2028-10-01", duration: 4)
 flight_6 = Flight.create(departure_airport: airport_7 , arrival_airport: airport_7, date: "2029-10-01", duration: 3)
 flight_7 = Flight.create(departure_airport: airport_1 , arrival_airport: airport_3, date: "2030-10-01", duration: 2)
-flight_1 = Flight.create(departure_airport: airport_5 , arrival_airport: airport_6, date: "2022-10-01", duration: 16)
+flight_8 = Flight.create(departure_airport: airport_5 , arrival_airport: airport_6, date: "2022-10-01", duration: 16)
 
-passenger_1 = Passenger.create(name: "George", email: "george@yahoo.com")
-passenger_2 = Passenger.create(name: "Bob", email: "bob@yahoo.com")
+# passenger_1 = Passenger.create(name: "George", email: "george@yahoo.com")
+# passenger_2 = Passenger.create(name: "Bob", email: "bob@yahoo.com")
