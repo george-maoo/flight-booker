@@ -1,0 +1,10 @@
+<h1>Your booking</h1>
+<div>Flight:</div>
+<%= render "flights/flight_view", flight: @booking.flight %>
+<div>Passengers booked:</div>
+<ul>
+  <% @booking.passengers.each do |passenger| %>
+    <li>name: <%= passenger.name %>, email: <%= passenger.email %></li>
+  <% end %>
+</ul>
+<%= link_to "Book another flight", root_path %>

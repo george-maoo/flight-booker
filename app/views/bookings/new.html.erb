@@ -1,28 +1,5 @@
 <h1>New booking:</h1>
 <div>Chosen flight:</div>
-<ul>
-  <li>From: <%= @flight.departure_airport %></li>
-  <li>To: <%= @flight.arrival_airport %></li>
-  <li>Date: <%= @flight.date %></li>
-  <li>Duration: <%= @flight.duration %> hours</li>
-</ul>
+<%= render "flights/flight_view", flight: @flight %>
 
-<%= form_with model: @booking do |f| %>
-  <%= f.hidden_field :flight_id, value: @booking.flight_id %>
-
-  <div>Passengers:</div>
-  <br>
-  <%= f.fields_for :passengers do |nested_form| %>
-    <div>
-      name:
-      <%= nested_form.text_field :name %>
-    </div>
-    <div>
-      email:
-      <%= nested_form.text_field :email %>
-    </div>
-    <br>
-  <% end %>
-
-  <%= f.submit "Submit form" %>
-<% end %>
+<%= render "form", booking: @booking %>
