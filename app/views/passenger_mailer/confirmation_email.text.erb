@@ -1,0 +1,11 @@
+Hello <%= @passenger.name %>
+
+You have booked a flight from <%= @flight.departure_airport %> to <%= @flight.arrival_airport %>.
+The flight is scheduled at <%= @flight.date %> and will be approximately <%= @flight.duration %> hours.
+
+You will be flying with:
+<% @booking.passengers.each do |passenger| %>
+  <% if passenger != @passenger %>
+- <%= passenger.name %>
+  <% end %>
+<% end %>

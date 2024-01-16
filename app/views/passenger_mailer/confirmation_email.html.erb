@@ -1,0 +1,13 @@
+<h1>Flight confirmation</h1>
+<p>Hello <%= @passenger.name %>,</p>
+
+<div>You have booked a flight from <%= @flight.departure_airport %> to <%= @flight.arrival_airport %>.</div>
+<div>The flight is scheduled at <%= @flight.date %> and will be approximately <%= @flight.duration %> hours.</div>
+<div>You will be flying with:</div>
+<ul>
+  <% @booking.passengers.each do |passenger| %>
+    <% if passenger != @passenger %>
+      <li><%= passenger.name %></li>
+    <% end %>
+  <% end %>
+</ul>
